@@ -118,17 +118,12 @@ export const authApiService = {
     }
   },
 
-  /**
-   * Faz logout
-   */
+
   async signOut(): Promise<void> {
-    // Remove o token do cliente da API
+  
     apiClient.setToken(null);
   },
 
-  /**
-   * Mapeia um usuário da API para o formato usado no frontend
-   */
   mapApiUserToUser(apiUser: ApiUser): User {
     const baseUser = {
       id: apiUser.id.toString(),
